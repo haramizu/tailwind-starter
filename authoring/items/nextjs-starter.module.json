@@ -11,7 +11,7 @@
       },
       {
         "name": "TailwindRenderingHost",
-        "path": "/sitecore/system/Settings/Services/Rendering Hosts/Tailwind",
+        "path": "/sitecore/system/Settings/Services/Rendering Hosts/tailwind",
         "scope": "singleItem"
       }
     ]
