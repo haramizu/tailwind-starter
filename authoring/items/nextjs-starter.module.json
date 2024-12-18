@@ -8,11 +8,6 @@
         "name": "DefaultRenderingHost",
         "path": "/sitecore/system/Settings/Services/Rendering Hosts/Default",
         "scope": "singleItem"
-      },
-      {
-        "name": "TailwindRenderingHost",
-        "path": "/sitecore/system/Settings/Services/Rendering Hosts/tailwind",
-        "scope": "singleItem"
       }
     ]
   }
