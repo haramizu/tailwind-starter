@@ -104,6 +104,13 @@ finally {
 $envFileLocation = "$RepoRoot/local-containers/.env"
 
 ################################
+# Create .env file
+################################
+
+Write-Host "Create .env file." -ForegroundColor Green
+Copy-Item ".\.env.template" ".\.env" -Force
+
+################################
 # Add Windows hosts file entries
 ################################
 

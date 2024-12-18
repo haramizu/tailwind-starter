@@ -35,12 +35,38 @@ services:
       - "traefik.http.routers.rendering-secure-nextjs.rule=Host(`${RENDERING_HOST_NEXTJS}`)"
       - "traefik.http.routers.rendering-secure-nextjs.tls=true"
 
+  rendering-tailwind:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-rendering-tailwind:${VERSION:-latest}
+    build:
+      context: ./docker/build/rendering-tailwind
+      target: ${BUILD_CONFIGURATION}
+      args:
+        PARENT_IMAGE: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    volumes:
+      - ../headapps/tailwind-starter:C:\app
+    environment:
+      SITECORE_API_HOST: "http://cm"
+      NEXTJS_DIST_DIR: ".next-container"
+      PUBLIC_URL: "https://${RENDERING_HOST_TAILWIND}"
+      JSS_EDITING_SECRET: ${JSS_EDITING_SECRET}
+      SITECORE_API_KEY: "${SITECORE_API_KEY_APP_STARTER}"
+      DISABLE_SSG_FETCH: ${DISABLE_SSG_FETCH}
+    depends_on:
+      - cm
+      - nodejs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rendering-secure-tailwind.entrypoints=websecure"
+      - "traefik.http.routers.rendering-secure-tailwind.rule=Host(`${RENDERING_HOST_TAILWIND}`)"
+      - "traefik.http.routers.rendering-secure-tailwind.tls=true"
+
   # Mount the Traefik configuration and certs.
   traefik:
     volumes:
       - ./docker/traefik:C:/etc/traefik
     depends_on:
       - rendering-nextjs
+      - rendering-tailwind
 
   # Mount our SQL data folder and use our custom image with the Headless Services (JSS)
   # module data added. See Dockerfile for details.
