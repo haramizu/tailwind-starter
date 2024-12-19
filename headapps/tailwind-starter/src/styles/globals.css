@@ -1,0 +1,7 @@
+@import './app.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './components/ColumnSplitter.css';
