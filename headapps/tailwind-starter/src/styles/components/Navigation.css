@@ -1,0 +1,29 @@
+.component.navigation.navigation-main {
+    .rel-level1 {
+        @apply float-left;
+        @apply mx-3;
+        position: relative;
+
+        &:hover {
+
+            >ul {
+                @apply block z-10 absolute top-full left-0 w-max pt-3 bg-white shadow-md min-w-[200px] border border-gray-300;
+            }
+        }
+
+        >ul {
+            overflow: hidden;
+            display: none;
+        }
+
+    }
+
+    .rel-level2 {
+        @apply mx-5 mb-3;
+    }
+
+}
+
+.menu-mobile-navigate {
+    display: none;
+}

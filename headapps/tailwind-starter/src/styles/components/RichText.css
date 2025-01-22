@@ -1,0 +1,31 @@
+.component.rich-text {
+    h1 {
+        @apply text-4xl;
+    }
+
+    h2 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    ul {
+        @apply list-disc pt-2 pl-3 pb-2;
+    }
+
+    ol {
+        @apply list-decimal pt-2 pl-3 pb-2;
+    }
+
+    li {
+        @apply ml-4;
+    }
+}
+
+.component.rich-text.rich-text-lists {
+    ul {
+        @apply list-disc px-2 pl-9 text-2xl;
+    }
+}
