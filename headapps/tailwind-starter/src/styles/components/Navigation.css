@@ -1,0 +1,43 @@
+.component.navigation.navigation-main {
+    .rel-level1 {
+        @apply float-left mx-3 relative;
+    }
+
+    .rel-level2 {
+        @apply mx-5 mb-3;
+    }
+
+    &.navigation-main-vertical {
+        .rel-level1 {
+            &:hover {
+                >ul {
+                    @apply block z-10 absolute top-full left-0 w-max pt-3 bg-white shadow-md min-w-[200px] border border-gray-300;
+                }
+            }
+
+            >ul {
+                overflow: hidden;
+                display: none;
+            }
+        }
+    }
+
+    &.navigation-main-horizontal {
+        .rel-level1 {
+            &:hover {
+                >ul {
+                    @apply flex z-10 absolute top-full left-0 w-screen pt-3 bg-white shadow-md border border-gray-300;
+                }
+            }
+
+            >ul {
+                overflow: hidden;
+                display: none;
+            }
+        }
+    }
+}
+
+.menu-mobile-navigate {
+    display: none;
+}

@@ -4,4 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pages Style - Common */
+@import './common/alignment.css';
+@import './common/highlight.css';
+@import './common/spacing.css';
+
+/* Components */
 @import './components/ColumnSplitter.css';
+@import './components/Container.css';
+@import './components/LinkList.css';
+@import './components/Navigation.css';
+@import './components/RichText.css';

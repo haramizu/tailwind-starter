@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { I18nProvider } from 'next-localization';
 import { SitecorePageProps } from 'lib/page-props';
+import { GoogleTagManager } from '@next/third-parties/google';
 import Bootstrap from 'src/Bootstrap';
 
 import '@/styles/globals.css';
@@ -16,6 +17,7 @@ function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element
         // Note Next.js does not (currently) provide anything for translation, only i18n routing.
         // If your app is not multilingual, next-localization and references to it can be removed.
       */}
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER || ''} />
       <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
         <Component {...rest} />
       </I18nProvider>
