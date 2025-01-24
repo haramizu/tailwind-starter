@@ -3,6 +3,7 @@ import { I18nProvider } from 'next-localization';
 import { SitecorePageProps } from 'lib/page-props';
 import { GoogleTagManager } from '@next/third-parties/google';
 import Bootstrap from 'src/Bootstrap';
+import { ThemeProvider } from 'next-themes';
 
 import '@/styles/globals.css';
 
@@ -19,7 +20,9 @@ function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element
       */}
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER || ''} />
       <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
-        <Component {...rest} />
+        <ThemeProvider>
+          <Component {...rest} />
+        </ThemeProvider>
       </I18nProvider>
     </>
   );
