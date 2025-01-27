@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-
 @import './app.css';
+
+@import 'tailwindcss';
 
 /* Pages Style - Common */
 @import './common/alignment.css';
