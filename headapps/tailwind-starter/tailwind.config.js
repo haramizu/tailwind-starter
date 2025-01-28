@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   safelist: [
-    `flex`,
     {
       pattern: /basis-/,
     },
     {
       pattern: /self-/,
     },
+    'flex',
   ],
   theme: {
     extend: {},
