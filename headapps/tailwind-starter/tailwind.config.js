@@ -6,7 +6,9 @@ module.exports = {
     `flex`,
     {
       pattern: /basis-/,
-      variants: ['sm', 'md', 'lg', 'xl', '2xl'],
+    },
+    {
+      pattern: /self-/,
     },
   ],
   theme: {
