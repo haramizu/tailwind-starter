@@ -1,4 +1,5 @@
-.component.rich-text {
+.component.rich-text,
+.component.content {
     h1 {
         @apply text-4xl;
     }
@@ -21,11 +22,5 @@
 
     li {
         @apply ml-4;
-    }
-}
-
-.component.rich-text.rich-text-lists {
-    ul {
-        @apply list-disc px-2 pl-9 text-2xl;
     }
 }
